@@ -1,7 +1,6 @@
 function setup() {
- // put setup code here
-createCanvas(1600,700);
-background(255,0,255);
+createCanvas(windowWidth,windowHeight);
+background(0);
 
 }
 
@@ -10,9 +9,4 @@ function draw() {
 
 }
 
-function mousePressed () {
-background(0,200,200);
-print("hello");
 
-
-}
