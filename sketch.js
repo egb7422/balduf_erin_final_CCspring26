@@ -2,7 +2,7 @@
 // prototype of keyboard visuals
 //   textStyle(BOLD); // p5 example from https://p5js.org/reference/p5/textStyle/
 
-let key = ''; //var stores the current key being pressed
+let k= ''; //var stores the current key being pressed
 
 function setup(){
 
@@ -26,7 +26,7 @@ function draw(){
   let y = height/2 - (h/2); // center keys vertically
 
 
-  if(key === 'Z'){ // if the z key is pressed
+  if(k === 'Z'){ // if the z key is pressed
     fill(200,100,100); // pressed = darker color
   }
   else{
@@ -37,7 +37,7 @@ function draw(){
   text('Z',w*0.5,height/2); // draw corresponding letter on the key, centered in key
 
 
-  if(key === 'X'){
+  if(k === 'X'){
     fill(200,150,100);
   }
   else{
@@ -49,7 +49,7 @@ function draw(){
 
 
 
-  if(key === 'C'){
+  if(k === 'C'){
     fill(200,200,100);
   }
   else{
@@ -61,7 +61,7 @@ function draw(){
 
 
 
-  if(key === 'V'){
+  if(k === 'V'){
     fill(100,200,150);
   }
   else{
@@ -73,7 +73,7 @@ function draw(){
 
 
 
-  if(key === 'B'){
+  if(k === 'B'){
     fill(100,150,200);
   }
   else{
@@ -85,7 +85,7 @@ function draw(){
 
 
 
-  if(key === 'N'){
+  if(k === 'N'){
     fill(150,100,200);
   }
   else{
@@ -97,7 +97,7 @@ function draw(){
 
 
 
-  if(key === 'M'){
+  if(k === 'M'){
     fill(200,100,180);
   }
   else{
@@ -114,3 +114,14 @@ function draw(){
   textSize(20); // smaller
   text("Press the Z, X, C, V, B, N, or M key!", width/2,50); // middle and top of page
 }
+
+function keyPressed(){
+
+  k = key; // store kdirectly
+}
+
+function keyReleased(){
+
+  k = ''; // reset/clear the kwhen released
+}
+
