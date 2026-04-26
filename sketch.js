@@ -58,4 +58,52 @@ function draw(){
   rect(2*w,y,w,h);
   fill(0);
   text('C',w*2.5,height/2);
+
+
+
+  if(key === 'V'){
+    fill(100,200,150);
+  }
+  else{
+    fill(186,255,201);
+  }
+  rect(3*w,y,w,h);
+  fill(0);
+  text('V',w*3.5,height/2);
+
+
+
+  if(key === 'B'){
+    fill(100,150,200);
+  }
+  else{
+    fill(186,255,255);
+  }
+  rect(4*w,y,w,h);
+  fill(0);
+  text('B',w*4.5,height/2);
+
+
+
+  if(key === 'N'){
+    fill(150,100,200);
+  }
+  else{
+    fill(218,186,255);
+  }
+  rect(5*w,y,w,h);
+  fill(0);
+  text('N',w*5.5,height/2);
+
+
+
+  if(key === 'M'){
+    fill(200,100,180);
+  }
+  else{
+    fill(255,186,245);
+  }
+  rect(6*w,y,w,h);
+  fill(0);
+  text('M',w*6.5,height/2);
 }
