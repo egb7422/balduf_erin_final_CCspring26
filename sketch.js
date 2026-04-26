@@ -16,4 +16,46 @@ function setup(){
 }
 
 
+function draw(){
 
+
+  background(0); // black background
+
+  let w = width/7; // divide canvas into 7 equal parts
+  let h = height/3; // make key height fit screen
+  let y = height/2 - (h/2); // center keys vertically
+
+
+  if(key === 'Z'){ // if the z key is pressed
+    fill(200,100,100); // pressed = darker color
+  }
+  else{
+    fill(255,179,186); // if not pressed = lighter standard pastel color
+  }
+  rect(0*w,y,w,h); // draw rectangle for key in first slot
+  fill(0); // text color black
+  text('Z',w*0.5,height/2); // draw corresponding letter on the key, centered in key
+
+
+  if(key === 'X'){
+    fill(200,150,100);
+  }
+  else{
+    fill(255,223,186);
+  }
+  rect(1*w,y,w,h);
+  fill(0);
+  text('X',w*1.5,height/2);
+
+
+
+  if(key === 'C'){
+    fill(200,200,100);
+  }
+  else{
+    fill(255,255,186);
+  }
+  rect(2*w,y,w,h);
+  fill(0);
+  text('C',w*2.5,height/2);
+}
