@@ -106,4 +106,11 @@ function draw(){
   rect(6*w,y,w,h);
   fill(0);
   text('M',w*6.5,height/2);
+
+
+
+  // instructions
+  fill(255); // white text
+  textSize(20); // smaller
+  text("Press the Z, X, C, V, B, N, or M key!", width/2,50); // middle and top of page
 }
