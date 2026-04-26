@@ -117,11 +117,11 @@ function draw(){
 
 function keyPressed(){
 
-  k = key; // store kdirectly
+  k = key; // store key exactly as pressed
 }
 
 function keyReleased(){
 
-  k = ''; // reset/clear the kwhen released
+  k = ''; // reset/clear the key when released
 }
 
