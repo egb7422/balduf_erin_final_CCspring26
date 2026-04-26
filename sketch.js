@@ -1,6 +1,5 @@
 // basically in the end add sound library so that keyboard plays
 // prototype of keyboard visuals
-//   textStyle(BOLD); // p5 example from https://p5js.org/reference/p5/textStyle/
 
 let k= ''; //var stores the current key being pressed
 
@@ -20,6 +19,7 @@ function draw(){
 
 
   background(0); // black background
+  textStyle(BOLD); // p5 example from https://p5js.org/reference/p5/textStyle/
 
   let w = width/7; // divide canvas into 7 equal parts
   let h = height/3; // make key height fit screen
@@ -108,11 +108,13 @@ function draw(){
   text('M',w*6.5,height/2);
 
 
-
+push(); // isolate new style
   // instructions
   fill(255); // white text
+  textStyle(NORMAL); // p5 example from https://p5js.org/reference/p5/textStyle/
   textSize(20); // smaller
   text("Press the Z, X, C, V, B, N, or M key!", width/2,50); // middle and top of page
+pop(); // return to old style
 }
 
 function keyPressed(){
