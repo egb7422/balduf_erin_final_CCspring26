@@ -27,10 +27,10 @@ function draw(){
 
 
   if(k === 'Z'){ // if the z key is pressed
-    fill(200,100,100); // pressed = darker color
+    fill(4,20,50); // pressed = darker color
   }
   else{
-    fill(255,179,186); // if not pressed = lighter standard pastel color
+    fill(6,31,75); // if not pressed = lighter standard pastel color
   }
   rect(0*w,y,w,h); // draw rectangle for key in first slot
   fill(0); // text color black
@@ -38,10 +38,10 @@ function draw(){
 
 
   if(k === 'X'){
-    fill(200,150,100);
+    fill(0,40,80);
   }
   else{
-    fill(255,223,186);
+    fill(3,57,108);
   }
   rect(1*w,y,w,h);
   fill(0);
@@ -50,10 +50,10 @@ function draw(){
 
 
   if(k === 'C'){
-    fill(200,200,100);
+    fill(0,60,120);
   }
   else{
-    fill(255,255,186);
+    fill(0,91,150);
   }
   rect(2*w,y,w,h);
   fill(0);
@@ -62,10 +62,10 @@ function draw(){
 
 
   if(k === 'V'){
-    fill(100,200,150);
+    fill(70,120,140);
   }
   else{
-    fill(186,255,201);
+    fill(100,151,177);
   }
   rect(3*w,y,w,h);
   fill(0);
@@ -74,10 +74,10 @@ function draw(){
 
 
   if(k === 'B'){
-    fill(100,150,200);
+    fill(140,180,200);
   }
   else{
-    fill(186,255,255);
+    fill(179,205,224);
   }
   rect(4*w,y,w,h);
   fill(0);
@@ -86,10 +86,10 @@ function draw(){
 
 
   if(k === 'N'){
-    fill(150,100,200);
+    fill(170,200,220);
   }
   else{
-    fill(218,186,255);
+    fill(206,228,245);
   }
   rect(5*w,y,w,h);
   fill(0);
@@ -98,10 +98,10 @@ function draw(){
 
 
   if(k === 'M'){
-    fill(200,100,180);
+    fill(190,220,240);
   }
   else{
-    fill(255,186,245);
+    fill(227,243,255);
   }
   rect(6*w,y,w,h);
   fill(0);
