@@ -3,6 +3,13 @@
 
 let k= ''; //var stores the current key being pressed
 
+let s1; // soon to be 7, one for each key's sound
+
+function preload(){ // load sound files before the sketch runs
+
+  s1 = loadSound('data/Bubble_Sound.mp3'); // z sound -> p5 example at https://p5js.org/reference/p5/loadSound/
+}
+
 function setup(){
 
   createCanvas(windowWidth, windowHeight); // makes canvas the size of the window
@@ -120,10 +127,25 @@ pop(); // return to old style
 function keyPressed(){
 
   k = key; // store key exactly as pressed
+
+  if(k === 'Z'){ // play sound when key is pressed
+    s1.loop(); // loop the sound when held down, p5 example at https://p5js.org/reference/p5/loop/
+  }
 }
 
 function keyReleased(){
 
-  k = ''; // reset/clear the key when released
+  let released = key; //which key was released by user
+
+  if(released === 'Z'){
+    s1.stop(); // stop the matching sound
+  }
+
+  k = ''; // reset/clear the key visual when released
+
+}
+
+function mousePressed(){
+  userStartAudio(); // needed for browser to allow sound, p5 example at https://p5js.org/reference/p5/userStartAudio/
 }
 
