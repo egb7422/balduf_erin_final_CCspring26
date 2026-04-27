@@ -5,6 +5,8 @@ let k= ''; //var stores the current key being pressed
 
 let s1, s2, s3; // soon to be 7, one for each key's sound
 
+/// MAYBE new sound effects to switch to: my own that I make in everyday conversation?: 1: eww, 2: hurray!, 3: phew!, 4: grrr, 5: awww :(, 6: yessss, 7: bruh
+
 function preload(){ // load sound files before the sketch runs
 
   s1 = loadSound('data/Bubble_Sound.mp3'); // z sound -> p5 example at https://p5js.org/reference/p5/loadSound/
@@ -120,9 +122,12 @@ function draw(){
 push(); // isolate new style
   // instructions
   fill(255); // white text
+  textSize(40); // smaller
+  textStyle(BOLDITALIC);
+  text("The Sounds of Erin", width/2,40); // middle and top of page
   textStyle(NORMAL); // p5 example from https://p5js.org/reference/p5/textStyle/
-  textSize(20); // smaller
-  text("Press the Z, X, C, V, B, N, or M key!", width/2,50); // middle and top of page
+  textSize(18); // smaller
+  text("Press the Z, X, C, V, B, N, or M key!", width/2,70); // middle and top of page
 pop(); // return to old style
 }
 
