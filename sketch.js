@@ -3,12 +3,13 @@
 
 let k= ''; //var stores the current key being pressed
 
-let s1, s2; // soon to be 7, one for each key's sound
+let s1, s2, s3; // soon to be 7, one for each key's sound
 
 function preload(){ // load sound files before the sketch runs
 
   s1 = loadSound('data/Bubble_Sound.mp3'); // z sound -> p5 example at https://p5js.org/reference/p5/loadSound/
   s2 = loadSound('data/Glitter_Sound.mp3'); // x sound
+  s3 = loadSound('data/Cheering_Sound.mp3'); // c sound
 }
 
 function setup(){
@@ -135,6 +136,9 @@ function keyPressed(){
   if(k === 'X'){ // ^ for X key
     s2.loop(); // loop the glitter sound effect
   }
+  if(k === 'C'){ // ^ for X key
+    s3.loop(); // loop the glitter sound effect
+  }
 }
 
 function keyReleased(){
@@ -146,6 +150,9 @@ function keyReleased(){
   }
   if(released === 'X'){
     s2.stop(); // ^ for glitter sound effect
+  }
+  if(released === 'C'){
+    s3.stop(); // ^ for glitter sound effect
   }
 
   k = ''; // reset/clear the key visual when released
