@@ -3,15 +3,20 @@
 
 let k= ''; //var stores the current key being pressed
 
-let s1, s2, s3; // soon to be 7, one for each key's sound
+let s1, s2, s3, s4, s5, s6, s7; // soon to be 7, one for each key's sound
 
-/// MAYBE new sound effects to switch to: my own that I make in everyday conversation?: 1: eww, 2: hurray!, 3: phew!, 4: grrr, 5: awww :(, 6: yessss, 7: bruh
+/// MAYBE new sound effects to switch to: my own that I make in everyday conversation?: 1: eww, 2: yippee!, 3: phew!, 4: grrr, 5: awww :(, 6: yessss, 7: bruh
 
 function preload(){ // load sound files before the sketch runs
 
   s1 = loadSound('data/Bubble_Sound.mp3'); // z sound -> p5 example at https://p5js.org/reference/p5/loadSound/
   s2 = loadSound('data/Glitter_Sound.mp3'); // x sound
   s3 = loadSound('data/Cheering_Sound.mp3'); // c sound
+  s4 = loadSound('data/Nom_Sound.mp3'); // v sound
+  s5 = loadSound('data/Eww_Sound.mp3'); // b sound
+  s6 = loadSound('data/Meow_Sound.mp3'); // n sound
+  s7 = loadSound('data/Wow.mp3'); // m sound
+
 }
 
 function setup(){
@@ -127,7 +132,7 @@ push(); // isolate new style
   text("The Sounds of Erin", width/2,40); // middle and top of page
   textStyle(NORMAL); // p5 example from https://p5js.org/reference/p5/textStyle/
   textSize(18); // smaller
-  text("Press the Z, X, C, V, B, N, or M key!", width/2,70); // middle and top of page
+  text("Press the Z, X, C, V, B, N, or M key!", width/2,80); // middle and top of page
 pop(); // return to old style
 }
 
@@ -136,13 +141,25 @@ function keyPressed(){
   k = key; // store key exactly as pressed
 
   if(k === 'Z'){ // play sound when key is pressed
-    s1.loop(); // loop the sound when held down, p5 example at https://p5js.org/reference/p5/loop/
+    s1.loop(); // loop the bubble sound when held down, p5 example at https://p5js.org/reference/p5/loop/
   }
   if(k === 'X'){ // ^ for X key
     s2.loop(); // loop the glitter sound effect
   }
-  if(k === 'C'){ // ^ for X key
-    s3.loop(); // loop the glitter sound effect
+  if(k === 'C'){ // ^ for C key
+    s3.loop(); // loop the hurray sound effect
+  }
+  if(k === 'V'){ // ^ for V key
+    s4.loop(); // loop the eating sound effect
+  }
+  if(k === 'B'){ // ^ for B key
+    s5.loop(); // loop the ewww sound effect
+  }
+  if(k === 'N'){ // ^ for N key
+    s6.loop(); // loop the meow sound effect
+  }
+  if(k === 'M'){ // ^ for M key
+    s7.loop(); // loop the wow sound effect
   }
 }
 
@@ -151,13 +168,25 @@ function keyReleased(){
   let released = key; //which key was released by user
 
   if(released === 'Z'){
-    s1.stop(); // stop the matching sound
+    s1.stop(); // stop the matching sound (bubbles)
   }
   if(released === 'X'){
     s2.stop(); // ^ for glitter sound effect
   }
   if(released === 'C'){
-    s3.stop(); // ^ for glitter sound effect
+    s3.stop(); // ^ for hurray sound effect
+  }
+  if(released === 'V'){
+    s4.stop(); // ^ for eating sound effect
+  }
+  if(released === 'B'){
+    s5.stop(); // ^ for eww sound effect
+  }
+  if(released === 'N'){
+    s6.stop(); // ^ for meow sound effect
+  }
+  if(released === 'M'){
+    s7.stop(); // ^ for wow sound effect
   }
 
   k = ''; // reset/clear the key visual when released
