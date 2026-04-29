@@ -4,6 +4,7 @@
 let k= ''; //var stores the current key being pressed
 
 let s1, s2, s3, s4, s5, s6, s7; // soon to be 7, one for each key's sound
+let customFont; // var for custom font
 
 /// MAYBE new sound effects to switch to: my own that I make in everyday conversation?: 1: eww, 2: yippee!, 3: phew!, 4: grrr, 5: awww :(, 6: yessss, 7: bruh
 
@@ -16,6 +17,8 @@ function preload(){ // load sound files before the sketch runs
   s5 = loadSound('data/Eww_Sound.mp3'); // b sound
   s6 = loadSound('data/Meow_Sound.mp3'); // n sound
   s7 = loadSound('data/Wow.mp3'); // m sound
+
+  customFont = loadFont('data/Nirakolu.otf'); // load the font i want to use
 
 }
 
@@ -129,11 +132,24 @@ push(); // isolate new style
   fill(255); // white text
   textSize(40); // smaller
   textStyle(BOLDITALIC);
-  text("The Sounds of Erin", width/2,40); // middle and top of page
+  textFont(customFont); // apply custom font only to typed sentence
+
+  let wiggleX = sin(frameCount *0.1)*3; // sin creates a smooth left to right oscillation type of movement, frameCount increases every frame automatically, *0.1 slows down movement, (sin() is between -1 ans 1), *3 scales movement to-3 to 3
+  let wiggleY = cos(frameCount*0.1)*3; // starting at new pos, using both cos and sin creates a circular wiggle, same speed and size as X
+  text("The Sounds of Erin", width/2 +wiggleX,40+wiggleY); // middle and top of page, added the wiggle
+  
+  //textFont("serif"); // apply other font only to typed sentence
   textStyle(NORMAL); // p5 example from https://p5js.org/reference/p5/textStyle/
   textSize(18); // smaller
   text("Press the Z, X, C, V, B, N, or M key!", width/2,80); // middle and top of page
 pop(); // return to old style
+
+
+// corner decorations = calling custom function
+drawSwirl(40,40); // top left
+drawSwirl(width-40,40); // top right
+drawSwirl(40,height-40); // bottom left
+drawSwirl(width-40,height-40); // bottom right
 }
 
 function keyPressed(){
@@ -197,3 +213,18 @@ function mousePressed(){
   userStartAudio(); // needed for browser to allow sound, p5 example at https://p5js.org/reference/p5/userStartAudio/
 }
 
+function drawSwirl(x,y){ // custom function: draws one swirl at given x,y pos
+  push(); 
+  translate(x,y); // move (0,0) to wherever corner is, everything drawn is relative to (x,y)
+  noStroke(); // no outline for ellipses
+  fill(255,150); // semi transparent white
+
+  for(let i = 0; i < 20; i++){ // loop to create multiple ellipses, runs 20 times for 20 circles, each loop creates one step of spiral
+    let angle = i *0.3+frameCount*0.05; // i*0.3 speads points around, framecount adds slow rotation animation
+    let radius = i*2; // increase distance from center (radius) to create a spiral, increases as i increases to push ellipses outward
+    let posX = cos(angle)*radius; // convert x pos, cos(angle) gives horizontal direction (-1 to 1), multiply by radius to scale outward
+    let posY = sin(angle)*radius; // convert y pos, sin(angle) gives verticle direction (-1 to 1), ^
+    ellipse(posX,posY,5,5); // small circle at newly defined positions
+  }
+  pop();
+}
