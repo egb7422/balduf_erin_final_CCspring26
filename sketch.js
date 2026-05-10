@@ -1,12 +1,13 @@
-// basically in the end add sound library so that keyboard plays
-// prototype of keyboard visuals
+// a soundboard for people to get to know me and the art I make!
+// for key pressing, capital letters must be used
 
 let k= ''; //var stores the current key being pressed
 
-let s1, s2, s3, s4, s5, s6, s7; // soon to be 7, one for each key's sound
+let s1, s2, s3, s4, s5, s6, s7; //  one var for each key's sound
+let img1, img2, img3, img4, img5, img6, img7; // one var for each image
 let customFont; // var for custom font
 
-/// MAYBE new sound effects to switch to: my own that I make in everyday conversation?: 1: eww, 2: yippee!, 3: phew!, 4: grrr, 5: awww :(, 6: yessss, 7: bruh
+/// MAYBE new sound effects to switch to: my own that I make in everyday conversation?: 1: eww (Authorship Unknown), 2: yippee! (The Creature), 3: phew! (Reaping What's Mine), 4: oooo (Abyssal Shapeshifter), 5: awww :( (Holding Sweetgrass), 6: yessss (Green World), 7: gulp (Hold Still)
 
 function preload(){ // load sound files before the sketch runs
 
@@ -19,6 +20,14 @@ function preload(){ // load sound files before the sketch runs
   s7 = loadSound('data/Wow.mp3'); // m sound
 
   customFont = loadFont('data/Nirakolu.otf'); // load the font i want to use
+  
+  img1 = loadImage('data/image1.png'); // load Z image
+  img2 = loadImage('data/image2.png'); // load X image
+  img3 = loadImage('data/image3.png'); // load C image
+  img4 = loadImage('data/image4.png'); // load V image
+  img5 = loadImage('data/image5.png'); // load B image
+  img6 = loadImage('data/image6.png'); // load N image
+  img7 = loadImage('data/image7.png'); // load M image
 
 }
 
@@ -37,34 +46,59 @@ function setup(){
 function draw(){
 
 
-  background(0); // black background
+  background(0); // black starting background
+
+  // change backgrounds to match the vibe of each painting/artwork
+  if(k === 'Z'){
+    background(66, 30, 28); // if Z is pressed, change bg to red to match painting
+  }
+  if(k === 'X'){
+    background(178, 209, 202); // if X is pressed, change bg to seafoam to match painting
+  }
+  if(k === 'C'){
+    background(71, 112, 80); // if C is pressed, change bg to sage to match painting
+  }
+  if(k === 'V'){
+    background(83, 65, 217); // if V is pressed, change bg to purple to match painting
+  }
+  if(k === 'B'){
+    background(158, 237, 111); // if B is pressed, change bg to limegreen to match painting
+  }
+  if(k === 'N'){
+    background(41, 29, 21); // if N is pressed, change bg to brown to match painting
+  }
+  if(k === 'M'){
+    background(68, 87, 110); // if M is pressed, change bg to dusty blue to match painting
+  }
+
+
   textStyle(BOLD); // p5 example from https://p5js.org/reference/p5/textStyle/
 
   let w = width/7; // divide canvas into 7 equal parts
   let h = height/3; // make key height fit screen
-  let y = height/2 - (h/2); // center keys vertically
+  let y = height - h; // moved to bottom of screen
 
 
   if(k === 'Z'){ // if the z key is pressed
     fill(4,20,50); // pressed = darker color
   }
   else{
-    fill(6,31,75); // if not pressed = lighter standard pastel color
+    fill(108,142,178); // if not pressed = lighter standard pastel color
   }
   rect(0*w,y,w,h); // draw rectangle for key in first slot
   fill(0); // text color black
-  text('Z',w*0.5,height/2); // draw corresponding letter on the key, centered in key
+  text('Z',w*0.5,y+50); // draw corresponding letter on the key, centered in key
 
 
   if(k === 'X'){
     fill(0,40,80);
   }
   else{
-    fill(3,57,108);
+    fill(61,87,76);
   }
   rect(1*w,y,w,h);
   fill(0);
-  text('X',w*1.5,height/2);
+  text('X',w*1.5,y+50);
 
 
 
@@ -72,11 +106,11 @@ function draw(){
     fill(0,60,120);
   }
   else{
-    fill(0,91,150);
+    fill(54,138,171);
   }
   rect(2*w,y,w,h);
   fill(0);
-  text('C',w*2.5,height/2);
+  text('C',w*2.5,y+50);
 
 
 
@@ -84,11 +118,11 @@ function draw(){
     fill(70,120,140);
   }
   else{
-    fill(100,151,177);
+    fill(165,189,101);
   }
   rect(3*w,y,w,h);
   fill(0);
-  text('V',w*3.5,height/2);
+  text('V',w*3.5,y+50);
 
 
 
@@ -96,11 +130,11 @@ function draw(){
     fill(140,180,200);
   }
   else{
-    fill(179,205,224);
+    fill(234,240,238);
   }
   rect(4*w,y,w,h);
   fill(0);
-  text('B',w*4.5,height/2);
+  text('B',w*4.5,y+50);
 
 
 
@@ -108,11 +142,11 @@ function draw(){
     fill(170,200,220);
   }
   else{
-    fill(206,228,245);
+    fill(75,102,195);
   }
   rect(5*w,y,w,h);
   fill(0);
-  text('N',w*5.5,height/2);
+  text('N',w*5.5,y+50);
 
 
 
@@ -120,11 +154,37 @@ function draw(){
     fill(190,220,240);
   }
   else{
-    fill(227,243,255);
+    fill(121,141,210);
   }
   rect(6*w,y,w,h);
   fill(0);
-  text('M',w*6.5,height/2);
+  text('M',w*6.5,y+50);
+
+
+  // have images pop up
+
+  imageMode(CENTER); // use first two parameters of image as the x and y of the image's center p5 ref: https://p5js.org/reference/p5/imageMode/
+    if(k === 'Z'){ // if Z is pressed have "Authorship Unknown" piece shown
+      image(img1, width/2, height/2-90, 1024-450, 833-400); // call corresponding image at centerish of canvas with original aspect ratio
+  }
+    if(k === 'X'){ // if X is pressed have "The Creature" piece shown
+      image(img2, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+  }
+    if(k === 'C'){ // if C is pressed have "Reaping What's Mine" piece shown
+      image(img3, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+  }
+    if(k === 'V'){ // if V is pressed have "Abyssal Shapeshifter" piece shown
+      image(img4, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+  }
+    if(k === 'B'){ // if B is pressed have "Holding Sweetgrass" piece shown
+      image(img5, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+  }
+    if(k === 'N'){ // if N is pressed have "Green World" piece shown
+      image(img6, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+  }
+    if(k === 'M'){ // if M is pressed have "Hold Still" piece shown
+      image(img7, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+  }
 
 
 push(); // isolate new style
@@ -145,11 +205,6 @@ push(); // isolate new style
 pop(); // return to old style
 
 
-// corner decorations = calling custom function
-drawSwirl(40,40); // top left
-drawSwirl(width-40,40); // top right
-drawSwirl(40,height-40); // bottom left
-drawSwirl(width-40,height-40); // bottom right
 }
 
 function keyPressed(){
@@ -211,20 +266,4 @@ function keyReleased(){
 
 function mousePressed(){
   userStartAudio(); // needed for browser to allow sound, p5 example at https://p5js.org/reference/p5/userStartAudio/
-}
-
-function drawSwirl(x,y){ // custom function: draws one swirl at given x,y pos
-  push(); 
-  translate(x,y); // move (0,0) to wherever corner is, everything drawn is relative to (x,y)
-  noStroke(); // no outline for ellipses
-  fill(255,150); // semi transparent white
-
-  for(let i = 0; i < 20; i++){ // loop to create multiple ellipses, runs 20 times for 20 circles, each loop creates one step of spiral
-    let angle = i *0.3+frameCount*0.05; // i*0.3 speads points around, framecount adds slow rotation animation
-    let radius = i*2; // increase distance from center (radius) to create a spiral, increases as i increases to push ellipses outward
-    let posX = cos(angle)*radius; // convert x pos, cos(angle) gives horizontal direction (-1 to 1), multiply by radius to scale outward
-    let posY = sin(angle)*radius; // convert y pos, sin(angle) gives verticle direction (-1 to 1), ^
-    ellipse(posX,posY,5,5); // small circle at newly defined positions
-  }
-  pop();
 }
