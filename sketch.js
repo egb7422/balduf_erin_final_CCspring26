@@ -168,22 +168,22 @@ function draw(){
       image(img1, width/2, height/2-90, 1024-450, 833-400); // call corresponding image at centerish of canvas with original aspect ratio
   }
     if(k === 'X'){ // if X is pressed have "The Creature" piece shown
-      image(img2, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+      image(img2, width/2, height/2-90, 784-500,1024-650); // call corresponding image at center of canvas with a size of 300
   }
     if(k === 'C'){ // if C is pressed have "Reaping What's Mine" piece shown
-      image(img3, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+      image(img3, width/2, height/2-90, 1024-580,1006-580); // call corresponding image at center of canvas with a size of 300
   }
     if(k === 'V'){ // if V is pressed have "Abyssal Shapeshifter" piece shown
-      image(img4, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+      image(img4, width/2, height/2-90, 1024-430,775-340); // call corresponding image at center of canvas with a size of 300
   }
     if(k === 'B'){ // if B is pressed have "Holding Sweetgrass" piece shown
-      image(img5, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+      image(img5, width/2, height/2-90, 1024-520,785-400); // call corresponding image at center of canvas with a size of 300
   }
     if(k === 'N'){ // if N is pressed have "Green World" piece shown
-      image(img6, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+      image(img6, width/2, height/2-90, 1024-530,966-520); // call corresponding image at center of canvas with a size of 300
   }
     if(k === 'M'){ // if M is pressed have "Hold Still" piece shown
-      image(img7, width/2, height/2, 300,300); // call corresponding image at center of canvas with a size of 300
+      image(img7, width/2, height/2-90, 1024-540,883-460); // call corresponding image at center of canvas with a size of 300
   }
 
 
