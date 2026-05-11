@@ -11,23 +11,23 @@ let customFont; // var for custom font
 
 function preload(){ // load sound files before the sketch runs
 
-  s1 = loadSound('data/Bubble_Sound.mp3'); // z sound -> p5 example at https://p5js.org/reference/p5/loadSound/
-  s2 = loadSound('data/Glitter_Sound.mp3'); // x sound
-  s3 = loadSound('data/Cheering_Sound.mp3'); // c sound
-  s4 = loadSound('data/Nom_Sound.mp3'); // v sound
-  s5 = loadSound('data/Eww_Sound.mp3'); // b sound
-  s6 = loadSound('data/Meow_Sound.mp3'); // n sound
-  s7 = loadSound('data/Wow.mp3'); // m sound
+  s1 = loadSound('data/Bubble_Sound.mp3'); // z sound -> preloading the sound for a smoother startup of the program, p5 example at https://p5js.org/reference/p5/loadSound/
+  s2 = loadSound('data/Glitter_Sound.mp3'); // x sound ^
+  s3 = loadSound('data/Cheering_Sound.mp3'); // c sound ^
+  s4 = loadSound('data/Nom_Sound.mp3'); // v sound ^
+  s5 = loadSound('data/Eww_Sound.mp3'); // b sound ^
+  s6 = loadSound('data/Meow_Sound.mp3'); // n sound ^
+  s7 = loadSound('data/Wow.mp3'); // m sound ^
 
-  customFont = loadFont('data/Nirakolu.otf'); // load the font i want to use
+  customFont = loadFont('data/Nirakolu.otf'); // load the custom font i want to use, downloaded from DaFont.com
   
-  img1 = loadImage('data/image1.png'); // load Z image
-  img2 = loadImage('data/image2.png'); // load X image
-  img3 = loadImage('data/image3.png'); // load C image
-  img4 = loadImage('data/image4.png'); // load V image
-  img5 = loadImage('data/image5.png'); // load B image
-  img6 = loadImage('data/image6.png'); // load N image
-  img7 = loadImage('data/image7.png'); // load M image
+  img1 = loadImage('data/image1.png'); // load Z image, preloading the image for a smoother startup of the program, images have been compressed to smaller versions already
+  img2 = loadImage('data/image2.png'); // load X image ^
+  img3 = loadImage('data/image3.png'); // load C image ^
+  img4 = loadImage('data/image4.png'); // load V image ^
+  img5 = loadImage('data/image5.png'); // load B image ^
+  img6 = loadImage('data/image6.png'); // load N image ^
+  img7 = loadImage('data/image7.png'); // load M image ^
 
 }
 
@@ -78,9 +78,9 @@ function draw(){
   let h = height/3; // make key height fit screen
   let y = height - h; // moved to bottom of screen
 
-
+  // keys of "my color palette," colors that make up me
   if(k === 'Z'){ // if the z key is pressed
-    fill(4,20,50); // pressed = darker color
+    fill(57, 90, 125); // pressed = darker color
   }
   else{
     fill(108,142,178); // if not pressed = lighter standard pastel color
@@ -90,73 +90,73 @@ function draw(){
   text('Z',w*0.5,y+50); // draw corresponding letter on the key, centered in key
 
 
-  if(k === 'X'){
-    fill(0,40,80);
+  if(k === 'X'){ // same as above for X key
+    fill(34, 54, 46);
   }
   else{
     fill(61,87,76);
   }
-  rect(1*w,y,w,h);
+  rect(1*w,y,w,h); // rectangle in second slot, same width and height
   fill(0);
   text('X',w*1.5,y+50);
 
 
 
-  if(k === 'C'){
-    fill(0,60,120);
+  if(k === 'C'){ // same as above for C key
+    fill(27, 86, 110);
   }
   else{
     fill(54,138,171);
   }
-  rect(2*w,y,w,h);
+  rect(2*w,y,w,h); // rectangle in third slot, same width and height
   fill(0);
   text('C',w*2.5,y+50);
 
 
 
-  if(k === 'V'){
-    fill(70,120,140);
+  if(k === 'V'){ // same as above for V key
+    fill(108, 128, 56);
   }
   else{
     fill(165,189,101);
   }
-  rect(3*w,y,w,h);
+  rect(3*w,y,w,h); // rectangle in fourth slot, same width and height
   fill(0);
   text('V',w*3.5,y+50);
 
 
 
-  if(k === 'B'){
-    fill(140,180,200);
+  if(k === 'B'){ // same as above for B key
+    fill(154, 181, 172);
   }
   else{
     fill(234,240,238);
   }
-  rect(4*w,y,w,h);
+  rect(4*w,y,w,h); // rectangle in fifth slot, same width and height
   fill(0);
   text('B',w*4.5,y+50);
 
 
 
-  if(k === 'N'){
-    fill(170,200,220);
+  if(k === 'N'){ // same as above for N key
+    fill(49, 74, 158);
   }
   else{
     fill(75,102,195);
   }
-  rect(5*w,y,w,h);
+  rect(5*w,y,w,h); // rectangle in sixth slot, same width and height
   fill(0);
   text('N',w*5.5,y+50);
 
 
 
-  if(k === 'M'){
-    fill(190,220,240);
+  if(k === 'M'){ // same as above for M key
+    fill(77, 96, 158);
   }
   else{
     fill(121,141,210);
   }
-  rect(6*w,y,w,h);
+  rect(6*w,y,w,h); // rectangle in seventh slot, same width and height
   fill(0);
   text('M',w*6.5,y+50);
 
@@ -168,22 +168,22 @@ function draw(){
       image(img1, width/2, height/2-90, 1024-450, 833-400); // call corresponding image at centerish of canvas with original aspect ratio
   }
     if(k === 'X'){ // if X is pressed have "The Creature" piece shown
-      image(img2, width/2, height/2-90, 784-500,1024-650); // call corresponding image at center of canvas with a size of 300
+      image(img2, width/2, height/2-90, 784-500,1024-650); // call corresponding image at center of canvas with original aspect ratio
   }
     if(k === 'C'){ // if C is pressed have "Reaping What's Mine" piece shown
-      image(img3, width/2, height/2-90, 1024-580,1006-580); // call corresponding image at center of canvas with a size of 300
+      image(img3, width/2, height/2-90, 1024-580,1006-580); // call corresponding image at center of canvas with original aspect ratio
   }
     if(k === 'V'){ // if V is pressed have "Abyssal Shapeshifter" piece shown
-      image(img4, width/2, height/2-90, 1024-430,775-340); // call corresponding image at center of canvas with a size of 300
+      image(img4, width/2, height/2-90, 1024-430,775-340); // call corresponding image at center of canvas with original aspect ratio
   }
     if(k === 'B'){ // if B is pressed have "Holding Sweetgrass" piece shown
-      image(img5, width/2, height/2-90, 1024-520,785-400); // call corresponding image at center of canvas with a size of 300
+      image(img5, width/2, height/2-90, 1024-520,785-400); // call corresponding image at center of canvas with original aspect ratio
   }
     if(k === 'N'){ // if N is pressed have "Green World" piece shown
-      image(img6, width/2, height/2-90, 1024-530,966-520); // call corresponding image at center of canvas with a size of 300
+      image(img6, width/2, height/2-90, 1024-530,966-520); // call corresponding image at center of canvas with original aspect ratio
   }
     if(k === 'M'){ // if M is pressed have "Hold Still" piece shown
-      image(img7, width/2, height/2-90, 1024-540,883-460); // call corresponding image at center of canvas with a size of 300
+      image(img7, width/2, height/2-90, 1024-540,883-460); // call corresponding image at center of canvas with original aspect ratio
   }
 
 
@@ -192,17 +192,21 @@ push(); // isolate new style
   fill(255); // white text
   textSize(40); // smaller
   textStyle(BOLDITALIC);
-  textFont(customFont); // apply custom font only to typed sentence
+  textFont(customFont); // apply custom font 
 
   let wiggleX = sin(frameCount *0.1)*3; // sin creates a smooth left to right oscillation type of movement, frameCount increases every frame automatically, *0.1 slows down movement, (sin() is between -1 ans 1), *3 scales movement to-3 to 3
   let wiggleY = cos(frameCount*0.1)*3; // starting at new pos, using both cos and sin creates a circular wiggle, same speed and size as X
-  text("The Sounds of Erin", width/2 +wiggleX,40+wiggleY); // middle and top of page, added the wiggle
+  text("The Simulation of Erin", width/2 +wiggleX,40+wiggleY); // middle and top of page, added the wiggle
   
   //textFont("serif"); // apply other font only to typed sentence
   textStyle(NORMAL); // p5 example from https://p5js.org/reference/p5/textStyle/
   textSize(18); // smaller
-  text("Press the Z, X, C, V, B, N, or M key!", width/2,80); // middle and top of page
-pop(); // return to old style
+  text("A playable digital environment triggering fragments of an animated self", width/2,80); // middle and top of page, a description of the project
+  stroke(255);  // white
+  strokeWeight(3); // line width of 3
+  line(width/3-30, 100, width/3+535, 100); // make a line underneath the text, underlined
+  pop(); // return to old style
+
 
 
 }
