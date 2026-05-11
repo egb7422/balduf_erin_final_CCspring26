@@ -7,17 +7,17 @@ let s1, s2, s3, s4, s5, s6, s7; //  one var for each key's sound
 let img1, img2, img3, img4, img5, img6, img7; // one var for each image
 let customFont; // var for custom font
 
-/// MAYBE new sound effects to switch to: my own that I make in everyday conversation?: 1: eww (Authorship Unknown), 2: yippee! (The Creature), 3: phew! (Reaping What's Mine), 4: oooo (Abyssal Shapeshifter), 5: awww :( (Holding Sweetgrass), 6: yessss (Green World), 7: gulp (Hold Still)
+/// new sound effects: my own that I make in everyday conversation: 1: eww (Authorship Unknown), 2: yippee! (The Creature), 3: phew! (Reaping What's Mine), 4: oooo (Abyssal Shapeshifter), 5: awww :( (Holding Sweetgrass), 6: yessss (Green World), 7: gulp (Hold Still)
 
 function preload(){ // load sound files before the sketch runs
 
-  s1 = loadSound('data/Bubble_Sound.mp3'); // z sound -> preloading the sound for a smoother startup of the program, p5 example at https://p5js.org/reference/p5/loadSound/
-  s2 = loadSound('data/Glitter_Sound.mp3'); // x sound ^
-  s3 = loadSound('data/Cheering_Sound.mp3'); // c sound ^
-  s4 = loadSound('data/Nom_Sound.mp3'); // v sound ^
-  s5 = loadSound('data/Eww_Sound.mp3'); // b sound ^
-  s6 = loadSound('data/Meow_Sound.mp3'); // n sound ^
-  s7 = loadSound('data/Wow.mp3'); // m sound ^
+  s1 = loadSound('data/eww.wav'); // z sound -> preloading the sound for a smoother startup of the program, p5 example at https://p5js.org/reference/p5/loadSound/
+  s2 = loadSound('data/yippee.wav'); // x sound ^
+  s3 = loadSound('data/phew.wav'); // c sound ^
+  s4 = loadSound('data/ooo.wav'); // v sound ^
+  s5 = loadSound('data/aww.wav'); // b sound ^
+  s6 = loadSound('data/yesss.wav'); // n sound ^
+  s7 = loadSound('data/gulp.wav'); // m sound ^
 
   customFont = loadFont('data/Nirakolu.otf'); // load the custom font i want to use, downloaded from DaFont.com
   
@@ -47,6 +47,7 @@ function draw(){
 
 
   background(0); // black starting background
+  strokeWeight(6);
 
   // change backgrounds to match the vibe of each painting/artwork
   if(k === 'Z'){
@@ -201,10 +202,10 @@ push(); // isolate new style
   //textFont("serif"); // apply other font only to typed sentence
   textStyle(NORMAL); // p5 example from https://p5js.org/reference/p5/textStyle/
   textSize(18); // smaller
-  text("A playable digital environment triggering fragments of an animated self", width/2,80); // middle and top of page, a description of the project
+  text("a playable digital environment triggering fragments of an animated self", width/2,80); // middle and top of page, a description of the project
   stroke(255);  // white
   strokeWeight(3); // line width of 3
-  line(width/3-30, 100, width/3+535, 100); // make a line underneath the text, underlined
+  line(width/3-30, 100, width/3+537, 100); // make a line underneath the text, underlined
   pop(); // return to old style
 
 
@@ -216,25 +217,25 @@ function keyPressed(){
   k = key; // store key exactly as pressed
 
   if(k === 'Z'){ // play sound when key is pressed
-    s1.loop(); // loop the bubble sound when held down, p5 example at https://p5js.org/reference/p5/loop/
+    s1.loop(); // loop the eww sound when held down, p5 example at https://p5js.org/reference/p5/loop/
   }
   if(k === 'X'){ // ^ for X key
-    s2.loop(); // loop the glitter sound effect
+    s2.loop(); // loop the yipee sound effect
   }
   if(k === 'C'){ // ^ for C key
-    s3.loop(); // loop the hurray sound effect
+    s3.loop(); // loop the phew sound effect
   }
   if(k === 'V'){ // ^ for V key
-    s4.loop(); // loop the eating sound effect
+    s4.loop(); // loop the ooo sound effect
   }
   if(k === 'B'){ // ^ for B key
-    s5.loop(); // loop the ewww sound effect
+    s5.loop(); // loop the aww sound effect
   }
   if(k === 'N'){ // ^ for N key
-    s6.loop(); // loop the meow sound effect
+    s6.loop(); // loop the yesss sound effect
   }
   if(k === 'M'){ // ^ for M key
-    s7.loop(); // loop the wow sound effect
+    s7.loop(); // loop the gulp sound effect
   }
 }
 
@@ -243,25 +244,25 @@ function keyReleased(){
   let released = key; //which key was released by user
 
   if(released === 'Z'){
-    s1.stop(); // stop the matching sound (bubbles)
+    s1.stop(); // stop the matching sound (eww)
   }
   if(released === 'X'){
-    s2.stop(); // ^ for glitter sound effect
+    s2.stop(); // ^ for yippee sound effect
   }
   if(released === 'C'){
-    s3.stop(); // ^ for hurray sound effect
+    s3.stop(); // ^ for phew sound effect
   }
   if(released === 'V'){
-    s4.stop(); // ^ for eating sound effect
+    s4.stop(); // ^ for ooo sound effect
   }
   if(released === 'B'){
-    s5.stop(); // ^ for eww sound effect
+    s5.stop(); // ^ for aww sound effect
   }
   if(released === 'N'){
-    s6.stop(); // ^ for meow sound effect
+    s6.stop(); // ^ for yess sound effect
   }
   if(released === 'M'){
-    s7.stop(); // ^ for wow sound effect
+    s7.stop(); // ^ for gulp sound effect
   }
 
   k = ''; // reset/clear the key visual when released
