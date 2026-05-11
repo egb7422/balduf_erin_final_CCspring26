@@ -7,6 +7,7 @@ let s1, s2, s3, s4, s5, s6, s7; //  one var for each key's sound
 let img1, img2, img3, img4, img5, img6, img7; // one var for each image
 let customFont; // var for custom font
 
+
 /// new sound effects: my own that I make in everyday conversation: 1: eww (Authorship Unknown), 2: yippee! (The Creature), 3: phew! (Reaping What's Mine), 4: oooo (Abyssal Shapeshifter), 5: awww :( (Holding Sweetgrass), 6: yessss (Green World), 7: gulp (Hold Still)
 
 function preload(){ // load sound files before the sketch runs
@@ -37,7 +38,6 @@ function setup(){
 
   textAlign(CENTER,CENTER); // p5 example: https://p5js.org/reference/p5/textAlign/ -> centers text horizontally and vertically
   textSize(32); // size of text, p5 example: https://p5js.org/reference/p5/textSize/
-
 
 
 }
@@ -188,6 +188,7 @@ function draw(){
   }
 
 
+
 push(); // isolate new style
   // instructions
   fill(255); // white text
@@ -202,10 +203,19 @@ push(); // isolate new style
   //textFont("serif"); // apply other font only to typed sentence
   textStyle(NORMAL); // p5 example from https://p5js.org/reference/p5/textStyle/
   textSize(18); // smaller
+  /*
   text("a playable digital environment triggering fragments of an animated self", width/2,80); // middle and top of page, a description of the project
   stroke(255);  // white
   strokeWeight(3); // line width of 3
   line(width/3-30, 100, width/3+537, 100); // make a line underneath the text, underlined
+  */
+  let des = "a playable digital environment triggering fragments of an animated self"; // description sentence
+  text(des, width/2,80); // draw text
+  let lineWidth = textWidth(des); // measure width of text
+  stroke(255); // white text
+  strokeWeight(3); // line width
+  line(width/2-lineWidth/2, 100,width/2+lineWidth/2,100); // left edge, y pos, right edge, y pos
+
   pop(); // return to old style
 
 
